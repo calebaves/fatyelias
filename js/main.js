@@ -98,23 +98,3 @@
     
 })(jQuery);
 
-// RSVP envio de formulario
-const form = document.getElementById('rsvpForm');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // Evita que la página se recargue
-  
-  const formData = new FormData(form);
-  const response = await fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  });
-
-  if (response.ok) {
-    alert('¡Gracias por tu respuesta!');
-    form.reset();
-  } else {
-    alert('Hubo un error al enviar.');
-  }
-});
